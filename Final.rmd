@@ -26,15 +26,125 @@ A new  preventative vaccine (covid921) is under test in clinical trials. Given t
 
 ## Males
 
+$H_0$ The covid-921 vaccine does not exhibit a significant difference in effectiveness between males
+
+$H_A$ The covid-921 vaccine does exhibit a significant difference in effectiveness between males
+
+```{r}
+library(dplyr)
+males = filter(FinalData, FinalData$sex=="M")
+```
+
+
+## Methods
+
+Males is categorical and covid-921 is explanatory, therefore we use cat~cat.
+
+## Graphical Results
+
+```{r}
+barchartGC(~infected + treatment,data=males)
+barchartGC(~infected + treatment,data=males, type="percent")
+```
+
+
+## Numerical Results
+
+```{r}
+table1 <- xtabs(~infected + treatment, data=males)
+rowPerc(table1)
+colPerc(table1)
+```
+
+
+## Inferental Results
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
 
 ## Females
 
+$H_0$ The covid-921 vaccine does not exhibit a significant difference in effectiveness between female
+
+$H_A$ The covid-921 vaccine does exhibit a significant difference in effectiveness between female
+
+```{r}
+library(dplyr)
+female = filter(FinalData, FinalData$sex=="F")
+```
+
+## Methods
+
+
+
+## Graphical Results
+
+
+
+## Numerical Results
+
+
+
+## Inferental Results
+
+
 
 ## LGBTQ
+
+$H_0$ The covid-921 vaccine does not exhibit a significant difference in effectiveness between lgbtq
+
+$H_A$ The covid-921 vaccine does exhibit a significant difference in effectiveness between lgbtq
+
+```{r}
+library(dplyr)
+lgbtq = filter(FinalData, FinalData$LGBTQ=="gay")
+```
+
+## Methods
+
+
+
+## Graphical Results
+
+
+
+## Numerical Results
+
+
+
+## Inferental Results
 
 
 
 ## Druggies
 
+$H_0$ The covid-921 vaccine does not exhibit a significant difference in effectiveness between druggies
+
+$H_A$ The covid-921 vaccine does exhibit a significant difference in effectiveness between druggies
+
+```{r}
+library(dplyr)
+druggies = filter(FinalData, FinalData$DrugUser=="Yes")
+```
+
+## Methods
+
+
+
+## Graphical Results
+
+
+
+## Numerical Results
+
+
+
+## Inferental Results
+
+
 
 # Overall Results and Conclusions
+
