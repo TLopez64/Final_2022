@@ -47,6 +47,7 @@ barchartGC(~infected + treatment,data=males)
 barchartGC(~infected + treatment,data=males, type="percent")
 ```
 
+This bar graph shows males who has covid and took the vaccine did better than the males who didn't take the vaccine The males who don't have covid who took the vaccine stayed fairly the same to those who didn't take the vaccine.
 
 ## Numerical Results
 
@@ -56,6 +57,7 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
+This table shows the males who has covid that took the vaccine, 30% still had covid and people who took the placebo, 69% still had covid The males without covid who took the vaccine, 49% got covid and the males who took the placebo, 50% got covid.
 
 ## Inferental Results
 
@@ -64,6 +66,8 @@ chisq.test(table1)
 chisqtestGC(table1)
 fisher.test(table1)
 ```
+
+The p value is 0.0000000000001098. We reject the null hypothesis.
 
 ## Females
 
@@ -78,11 +82,16 @@ female = filter(FinalData, FinalData$sex=="F")
 
 ## Methods
 
-
+Males is categorical and covid-921 is explanatory, therefore we use cat~cat.
 
 ## Graphical Results
 
+```{r}
+barchartGC(~infected + treatment,data=female)
+barchartGC(~infected + treatment,data=female, type="percent")
+```
 
+This bar graph shows females who has covid and took the vaccine did better than the females who didn't take the vaccine The females who don't have covid who took the vaccine stayed fairly the same to those who didn't take the vaccine.
 
 ## Numerical Results
 
@@ -105,11 +114,14 @@ lgbtq = filter(FinalData, FinalData$LGBTQ=="gay")
 
 ## Methods
 
-
+Males is categorical and covid-921 is explanatory, therefore we use cat~cat.
 
 ## Graphical Results
 
-
+```{r}
+barchartGC(~infected + treatment,data=lgbtq)
+barchartGC(~infected + treatment,data=lgbtq, type="percent")
+```
 
 ## Numerical Results
 
@@ -132,11 +144,14 @@ druggies = filter(FinalData, FinalData$DrugUser=="Yes")
 
 ## Methods
 
-
+Males is categorical and covid-921 is explanatory, therefore we use cat~cat.
 
 ## Graphical Results
 
-
+```{r}
+barchartGC(~infected + treatment,data=druggies)
+barchartGC(~infected + treatment,data=druggies, type="percent")
+```
 
 ## Numerical Results
 
