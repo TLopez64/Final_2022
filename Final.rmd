@@ -24,7 +24,7 @@ mutate(across(where(is.character), as.factor))
 
 A new  preventative vaccine (covid921) is under test in clinical trials. Given the nature of this vaccine it is suspected that the drug may exhibit different effectiveness across the variety of subpopulations tracked. Consider population subgroups by gender( guys and gals), drug use, and sexual orientation. Write a complete report that separately considers this drug for each subgroup and your recommendations as to whether people in the subgroup should take the vaccine. Structure your report in four sections each devoted to one of the four subgroups, use null and alternative hypothesis statements and correct statistical verbage when referencing p-values in conclusions.
 
-## Males
+# Males
 
 $H_0$ The covid-921 vaccine does not exhibit a significant difference in effectiveness between males
 
@@ -47,7 +47,7 @@ barchartGC(~infected + treatment,data=males)
 barchartGC(~infected + treatment,data=males, type="percent")
 ```
 
-This bar graph shows males who has covid and took the vaccine did better than the males who didn't take the vaccine. The males who don't have covid who took the vaccine stayed fairly the same to those who didn't take the vaccine.
+This bar graph shows males who has covid and took the vaccine did better than the males who took the placebo. The males who don't have covid who took the vaccine stayed fairly the same to those who took the placebo.
 
 ## Numerical Results
 
@@ -69,7 +69,7 @@ fisher.test(table1)
 
 The p value is 0.0000000000001098. We reject the null hypothesis. The fisher exact test is 0.00000000000004631.
 
-## Females
+# Females
 
 $H_0$ The covid-921 vaccine does not exhibit a significant difference in effectiveness between female
 
@@ -91,7 +91,7 @@ barchartGC(~infected + treatment,data=female)
 barchartGC(~infected + treatment,data=female, type="percent")
 ```
 
-This bar graph shows females who has covid and took the vaccine did better than the females who didn't take the vaccine. The females who don't have covid who took the vaccine stayed fairly the same to those who didn't take the vaccine.
+This bar graph shows females who has covid and took the vaccine did better than the females who took the placebo. The females who don't have covid who took the vaccine stayed fairly the same to those who took the placebo.
 
 ## Numerical Results
 
@@ -113,7 +113,7 @@ fisher.test(table2)
 
 The p value is 0.0002732. We reject the null hypothesis. The fisher exact test is 0.0002162.
 
-## LGBTQ
+# LGBTQ
 
 $H_0$ The covid-921 vaccine does not exhibit a significant difference in effectiveness between lgbtq
 
@@ -135,7 +135,7 @@ barchartGC(~infected + treatment,data=lgbtq)
 barchartGC(~infected + treatment,data=lgbtq, type="percent")
 ```
 
-This bar graph shows lgbtq people who has covid and took the vaccine did better than the lgbtq people who didn't take the vaccine. The lgbtq people who don't have covid who took the vaccine stayed exactly the same to those who didn't take the vaccine.
+This bar graph shows lgbtq people who has covid and took the vaccine didn't do better than the lgbtq people who took the placebo. The lgbtq people who don't have covid who took the vaccine stayed exactly the same to those who took the placebo.
 
 ## Numerical Results
 
@@ -158,7 +158,7 @@ fisher.test(table3)
 The p value is 0.00000006668. Therefore we reject the null hypothesis. The fisher exact test p value is 0.00000001029.
 
 
-## Druggies
+# Druggies
 
 $H_0$ The covid-921 vaccine does not exhibit a significant difference in effectiveness between druggies
 
@@ -180,7 +180,7 @@ barchartGC(~infected + treatment,data=druggies)
 barchartGC(~infected + treatment,data=druggies, type="percent")
 ```
 
-This bar graph shows druggies who has covid and took the vaccine did better than the druggies who didn't take the vaccine. The druggies who don't have covid who took the vaccine stayed fairly the same to those who didn't take the vaccine.
+This bar graph shows druggies who has covid and took the vaccine didn't do better than the druggies who took the placebo. The druggies who don't have covid who took the vaccine stayed fairly the same to those who took the placebo.
 
 ## Numerical Results
 
