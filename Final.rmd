@@ -82,7 +82,7 @@ female = filter(FinalData, FinalData$sex=="F")
 
 ## Methods
 
-Males is categorical and covid-921 is explanatory, therefore we use cat~cat.
+Females is categorical and covid-921 is explanatory, therefore we use cat~cat.
 
 ## Graphical Results
 
@@ -126,7 +126,7 @@ lgbtq = filter(FinalData, FinalData$LGBTQ=="gay")
 
 ## Methods
 
-Males is categorical and covid-921 is explanatory, therefore we use cat~cat.
+Lgbtq is categorical and covid-921 is explanatory, therefore we use cat~cat.
 
 ## Graphical Results
 
@@ -135,12 +135,27 @@ barchartGC(~infected + treatment,data=lgbtq)
 barchartGC(~infected + treatment,data=lgbtq, type="percent")
 ```
 
+This bar graph shows lgbtq people who has covid and took the vaccine did better than the lgbtq people who didn't take the vaccine The lgbtq people who don't have covid who took the vaccine stayed fairly the same to those who didn't take the vaccine.
+
 ## Numerical Results
 
+```{r}
+table3 <- xtabs(~infected + treatment, data=lgbtq)
+rowPerc(table3)
+colPerc(table3)
+```
 
+This table shows the lgbtq people who has covid that took the vaccine, 84% still had covid and people who took the placebo, 15% still had covid. The lgbtq people without covid who took the vaccine, 49% got covid and the lgbtq people who took the placebo, 50% got covid.
 
 ## Inferental Results
 
+```{r}
+chisq.test(table3)
+chisqtestGC(table3)
+fisher.test(table3)
+```
+
+The p value is 0.00000006668. Therefore we reject the null hypothesis. The fisher exact test p value is 0.00000001029.
 
 
 ## Druggies
