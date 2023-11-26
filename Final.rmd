@@ -47,7 +47,7 @@ barchartGC(~infected + treatment,data=males)
 barchartGC(~infected + treatment,data=males, type="percent")
 ```
 
-This bar graph shows males who has covid and took the vaccine did better than the males who didn't take the vaccine The males who don't have covid who took the vaccine stayed fairly the same to those who didn't take the vaccine.
+This bar graph shows males who has covid and took the vaccine did better than the males who didn't take the vaccine. The males who don't have covid who took the vaccine stayed fairly the same to those who didn't take the vaccine.
 
 ## Numerical Results
 
@@ -57,7 +57,7 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
-This table shows the males who has covid that took the vaccine, 30% still had covid and people who took the placebo, 69% still had covid The males without covid who took the vaccine, 49% got covid and the males who took the placebo, 50% got covid.
+This table shows the males who has covid that took the vaccine, 30.43% still had covid and people who took the placebo, 69.57% still had covid. The males without covid who took the vaccine, 49.52% got covid and the males who took the placebo, 50.48% got covid.
 
 ## Inferental Results
 
@@ -91,7 +91,7 @@ barchartGC(~infected + treatment,data=female)
 barchartGC(~infected + treatment,data=female, type="percent")
 ```
 
-This bar graph shows females who has covid and took the vaccine did better than the females who didn't take the vaccine The females who don't have covid who took the vaccine stayed fairly the same to those who didn't take the vaccine.
+This bar graph shows females who has covid and took the vaccine did better than the females who didn't take the vaccine. The females who don't have covid who took the vaccine stayed fairly the same to those who didn't take the vaccine.
 
 ## Numerical Results
 
@@ -101,7 +101,7 @@ rowPerc(table2)
 colPerc(table2)
 ```
 
-This table shows the females who has covid that took the vaccine, 40% still had covid and people who took the placebo, 60% still had covid The females without covid who took the vaccine, 49% got covid and the females who took the placebo, 50% got covid.
+This table shows the females who has covid that took the vaccine, 40% still had covid and people who took the placebo, 60% still had covid. The females without covid who took the vaccine, 49.88% got covid and the females who took the placebo, 50.12% got covid.
 
 ## Inferental Results
 
@@ -135,7 +135,7 @@ barchartGC(~infected + treatment,data=lgbtq)
 barchartGC(~infected + treatment,data=lgbtq, type="percent")
 ```
 
-This bar graph shows lgbtq people who has covid and took the vaccine did better than the lgbtq people who didn't take the vaccine The lgbtq people who don't have covid who took the vaccine stayed fairly the same to those who didn't take the vaccine.
+This bar graph shows lgbtq people who has covid and took the vaccine did better than the lgbtq people who didn't take the vaccine. The lgbtq people who don't have covid who took the vaccine stayed exactly the same to those who didn't take the vaccine.
 
 ## Numerical Results
 
@@ -145,7 +145,7 @@ rowPerc(table3)
 colPerc(table3)
 ```
 
-This table shows the lgbtq people who has covid that took the vaccine, 84% still had covid and people who took the placebo, 15% still had covid. The lgbtq people without covid who took the vaccine, 49% got covid and the lgbtq people who took the placebo, 50% got covid.
+This table shows the lgbtq people who has covid that took the vaccine, 84.62% still had covid and people who took the placebo, 15.38% still had covid. The lgbtq people without covid who took the vaccine, 49.98% got covid and the lgbtq people who took the placebo, 50.02% got covid.
 
 ## Inferental Results
 
@@ -166,12 +166,12 @@ $H_A$ The covid-921 vaccine does exhibit a significant difference in effectivene
 
 ```{r}
 library(dplyr)
-druggies = filter(FinalData, FinalData$DrugUser=="Yes")
+druggies = filter(FinalData, FinalData$DrugUser=="yes")
 ```
 
 ## Methods
 
-Males is categorical and covid-921 is explanatory, therefore we use cat~cat.
+Druggies is categorical and covid-921 is explanatory, therefore we use cat~cat.
 
 ## Graphical Results
 
@@ -180,13 +180,27 @@ barchartGC(~infected + treatment,data=druggies)
 barchartGC(~infected + treatment,data=druggies, type="percent")
 ```
 
+This bar graph shows druggies who has covid and took the vaccine did better than the druggies who didn't take the vaccine. The druggies who don't have covid who took the vaccine stayed fairly the same to those who didn't take the vaccine.
+
 ## Numerical Results
 
+```{r}
+table4 <- xtabs(~infected + treatment, data=druggies)
+rowPerc(table4)
+colPerc(table4)
+```
 
+This table shows the druggies who has covid that took the vaccine, 88.33% still had covid and people who took the placebo, 11.67% still had covid. The druggies without covid who took the vaccine, 48.81% got covid and the druggies who took the placebo, 51.19% got covid.
 
 ## Inferental Results
 
+```{r}
+chisq.test(table4)
+chisqtestGC(table4)
+fisher.test(table4)
+```
 
+The p value is 0.000000002842. Therefore we reject the null hypothesis. The fisher exact test p value is 0.000000000232.
 
 # Overall Results and Conclusions
 
