@@ -204,3 +204,4 @@ The p value is 0.000000002842. Therefore we reject the null hypothesis. The fish
 
 # Overall Results and Conclusions
 
+In conclusion, the original question is, The vaccine is suspected that it may exhibit different effectiveness across the variety of subpopulations tracked? There is a difference in the effectiveness across the variety of subpopulations. The males and females who took the vaccine did better than the others who took the placebo. The lgbtq and druggies who took the vaccine didn't do better than the others who took the placebo. The male p value is 0.0000000000001098. The female p value is 0.0002732. The lgbtq p value is 0.00000006668. The druggies p value is 0.000000002842. Since all the p values are smaller than 0.05, we reject the null hypothesis. 
